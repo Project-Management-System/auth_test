@@ -1,3 +1,8 @@
-<a href='/core/users/'>Users</a><br/>
-<a href='/core/registration/'>Register</a>
+{% if user.username != "" %}
+<h1>Logged in as: {{ user.username }}</h1>
+{% endif %}
 
+<a href='/core/users/'>Users</a><br/>
+<a href='/core/registration/'>Register</a><br/>
+<a href='/core/login/'>Login</a><br/>
+<a href='/core/logout/'>Log out</a>
