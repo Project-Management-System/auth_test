@@ -12,9 +12,9 @@ def register(request):
         try:
             User.objects.create_user(username, mail, password)
         except:
-            return render_to_response('registration.html',{'error':'Username already exist'},context_instance=RequestContext(request))
+            return render_to_response('register.html',{'error':'Username already exist'},context_instance=RequestContext(request))
         return HttpResponseRedirect('/core/login/')
-    return render_to_response('registration.html',context_instance=RequestContext(request))
+    return render_to_response('register.html',context_instance=RequestContext(request))
 
 def update_profile():
     pass
