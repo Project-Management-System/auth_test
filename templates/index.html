@@ -1,8 +1,28 @@
-{% if user.username != "" %}
-<h1>Logged in as: {{ user.username }}</h1>
-{% endif %}
+<table>
+  <tr>
+    <td>
+      <a href='/core'>Home</a>
+    </td>
+    <td>
+      <a href='/core/users/'>Users</a>
+    </td>
+    <td>
+      <a href='/core/registration/'>Register</a>
+    </td>
+    <td>
+      <a href='/core/login/'>Login</a>
+    </td>
+    {% if user.username != "" %}
+    <td>
+      Logged in as: {{ user.username }}
+    </td>
+    {% endif %}
+    <td>
+      <a href='/core/logout/'>Log out</a>
+    </td>
+  </tr>
+</table>
 
-<a href='/core/users/'>Users</a><br/>
-<a href='/core/registration/'>Register</a><br/>
-<a href='/core/login/'>Login</a><br/>
-<a href='/core/logout/'>Log out</a>
+
+
+

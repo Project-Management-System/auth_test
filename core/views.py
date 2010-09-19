@@ -7,9 +7,13 @@ def register(request):
     username = request.POST['login']
     password = request.POST['password']
     mail = request.POST['mail']
-    User.objects.create_user(username, mail, password)
+    try:
+        User.objects.create_user(username, mail, password)
+    except:
+        #return render_to_response('registration.html',{'error':'Username already exist'})
+        return HttpResponseRedirect('/core/registration/',{'error':'Username already exist'})
     return HttpResponseRedirect('/core/users/')
 
 def index(request):
     user = get_user(request)
-    return render_to_response('index.html',{'user':user})
+    return render_to_response('index.html',locals())
