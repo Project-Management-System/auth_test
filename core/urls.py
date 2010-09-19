@@ -1,5 +1,6 @@
 from django.conf.urls.defaults import *
 from django.contrib.auth.models import User
+from auth_test.core.forms import Login_form
 info={'queryset': User.objects.all()}
 
 #profile = {
