@@ -3,6 +3,10 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth import get_user
 from django.shortcuts import render_to_response
 
+def registration(request):
+    user = get_user(request)
+    render_to_response('registration.help',locals())
+
 def register(request):
     username = request.POST['login']
     password = request.POST['password']

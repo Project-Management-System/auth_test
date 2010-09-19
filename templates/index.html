@@ -1,29 +1,5 @@
-<table>
-  <tr>
-    <td>
-      <a href='/core'>Home</a>
-    </td>
-    <td>
-      <a href='/core/users/'>Users</a>
-    </td>
-    <td>
-      <a href='/core/registration/'>Register</a>
-    </td>
-    <td>
-      <a href='/core/login/'>Login</a>
-    </td>
-    <td width=100%>
-    </td>
-    {% if user.username != "" %}
-    <td nowrap="nowrap">
-      Logged in as: {{ user.username }}
-    </td>
-    <td nowrap="nowrap">
-      <a href='/core/logout/'>Log out</a>
-    </td>
-    {% endif %}
-  </tr>
-</table>
+{% extends 'base.html' %}
+{% block title%}Index{% endblock %}
 
 
 

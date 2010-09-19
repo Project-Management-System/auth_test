@@ -1,5 +1,11 @@
-{% include 'index.html'%}
+{% extends 'base.html'%}
 
+{% block title %}Registration{% endblock %}
+
+{% block content%}
+{% if user.username %}
+  <h2>You are logged in.</h2>
+{% else %}
 <form action="/core/register/" method="post">{% csrf_token %}
   <h1>Registration:</h1><br/>
   {% if error %}
@@ -20,3 +26,5 @@
   </table>
   <input type="submit">
 </form> 
+{% endif %}
+{% endblock %}

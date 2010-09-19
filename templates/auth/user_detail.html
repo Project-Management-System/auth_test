@@ -1,7 +1,11 @@
-{% include 'index.html'%}
+{% extends 'base.html'%}
 
+{% block title %}User {{ object.username }}{% endblock %}
+
+{% block content%}
 Username: {{ object.username }}<br/>
 First name: {{ object.first_name }}<br/>
 Last name: {{ object.last_name }}<br/>
 E-mail: {{ object.email }}<br/>
 Password hash: {{ object.password }}
+{% endblock %}
