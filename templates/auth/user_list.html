@@ -2,14 +2,17 @@
 
 {% block title %}User List{% endblock %}
 
+
 {% block content%}
-{% if object_list %}
-    <ul>
-    {% for user in object_list %}
-        <li><a href="/core/user/{{ user.id }}/">{{ user.username }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No Users are available.</p>
-{% endif %}
+  {% if user.username %}
+    {% if object_list %}
+        <ul>
+        {% for user in object_list %}
+            <li><a href="/core/user/{{ user.id }}/">{{ user.username }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No Users are available.</p>
+    {% endif %}
+  {% endif %}
 {% endblock %}

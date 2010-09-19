@@ -9,20 +9,22 @@
       <td>
         <a href='/core'>Home</a>
       </td>
+      {% if user.username %}
       <td>
         <a href='/core/users/'>Users</a>
       </td>
+      {% endif %}
       <td>
-        <a href='/core/registration/'>Register</a>
+        <a href='/core/register/'>Register</a>
       </td>
       <td>
         <a href='/core/login/'>Login</a>
       </td>
       <td width=100%>
       </td>
-      {% if user.username != "" %}
+      {% if user.username %}
       <td nowrap="nowrap">
-        Logged in as: {{ user.username }}
+        Logged in as: <a href='/core/profile/'>{{ user.username }}</a>
       </td>
       <td nowrap="nowrap">
         <a href='/core/logout/'>Log out</a>

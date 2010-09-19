@@ -1,11 +1,17 @@
 {% extends 'base.html'%}
 
-{% block title %}User {{ object.username }}{% endblock %}
+{% block title %}User {% if user.username %}{{ object.username }}{% endif %}{% endblock %}
 
 {% block content%}
-Username: {{ object.username }}<br/>
-First name: {{ object.first_name }}<br/>
-Last name: {{ object.last_name }}<br/>
-E-mail: {{ object.email }}<br/>
-Password hash: {{ object.password }}
+  {% if user.username %}
+    Username: {{ object.username }}<br/>
+    First name: {{ object.first_name }}<br/>
+    Last name: {{ object.last_name }}<br/>
+    E-mail: {{ object.email }}<br/>
+    Password hash: {{ object.password }}<br/>
+    Date joined: {{ object.date_joined }}<br/>
+    Last login: {{ object.last_login }}<br/>
+    Account active: {{ object.is_active }}<br/>
+    Is staff: {{ object.is_staff }}<br/>
+  {% endif %}
 {% endblock %}
