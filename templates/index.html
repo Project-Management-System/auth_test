@@ -12,14 +12,16 @@
     <td>
       <a href='/core/login/'>Login</a>
     </td>
+    <td width=100%>
+    </td>
     {% if user.username != "" %}
-    <td>
+    <td nowrap="nowrap">
       Logged in as: {{ user.username }}
     </td>
-    {% endif %}
-    <td>
+    <td nowrap="nowrap">
       <a href='/core/logout/'>Log out</a>
     </td>
+    {% endif %}
   </tr>
 </table>
 
