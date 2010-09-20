@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+<h1><a href ="/project/newproject/">Create project</a><h1/>
+{% block content %}
+{% if user.username %}
+  {% for i in user.project_set.all %}
+    {{ i.name }}<br/>
+  {% endfor %}
+{% endif %}
+{% endblock%}

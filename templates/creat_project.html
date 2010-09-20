@@ -1,0 +1,6 @@
+<form action='/project/newproject/', method='post'>
+  <table>{% csrf_token %}
+    {{ form.as_table }}
+  </table>
+  <input type='submit'/>
+</form>
